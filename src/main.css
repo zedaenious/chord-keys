@@ -1,20 +1,10 @@
-#outer {
-	background-color: red;
-	width:  100%;
+body {
+	margin: 0;
+	padding: 0;
 }
 
-.inner {
-	width:  25%;
-}
-
-#inner-1 {
-	background-color: purple;
-}
-
-#inner-2 {
-	background-color: green;
-}
-
-#inner-3 {
-	background-color: yellow;
+#flex-container {
+	width: 720px;
+	position: fixed;
+	text-align: center;
 }
