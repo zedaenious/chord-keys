@@ -1,0 +1,19 @@
+#outer {
+	background-color: red;
+	width:  100%;
+}
+
+#inner-1 {
+	background-color: purple;
+	width:  33%;
+}
+
+#inner-2 {
+	background-color: green;
+	width:  33%;
+}
+
+#inner-3 {
+	background-color: yellow;
+	width:  33%;
+}
