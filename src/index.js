@@ -4,7 +4,7 @@ import Header from '../src/components/Header.js';
 import Body from '../src/components/Body.js';
 import Footer from '../src/components/Footer.js';
 
-import './main.css';
+import './main.less';
 
 const layout = (
 	<div id='flex-container'>

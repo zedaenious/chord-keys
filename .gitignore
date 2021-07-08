@@ -1,3 +1,12 @@
+#directories
 node_modules/
 dist/
+
+
+#individual files
 package-lock.json
+
+
+#file extensions
+**.swp
+**/.DS_Store
