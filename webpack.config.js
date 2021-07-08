@@ -1,7 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
+const isProduction = process.env.NODE_ENV === 'production';
+const contextPlugin = isProduction ? new MiniCssExtractPlugin() : () => {};
+
+const config = {
 	mode: 'development',
 	entry: path.resolve(__dirname, 'src', 'index.js'),
 	output: {
@@ -21,21 +25,23 @@ module.exports = {
 					],
 				},
 			},
-			// processes .less files and injects the less, compiled, into a style tag in header
 			{
 				test: /\.less$/,
 				use: [
-					{ loader: 'style-loader' },
-					{ loader: 'css-loader' },
-					{ loader: 'less-loader' }
-				]
+					isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+					'css-loader',
+					'less-loader',
+				],
 			},
 		],
 	},
 	plugins: [
+		contextPlugin,
 		new HtmlWebpackPlugin({
 			title: 'Development',
 			template: path.resolve(__dirname, 'src', 'index.html'),
 		}),
 	],
 };
+
+module.exports = config;
