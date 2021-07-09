@@ -1,18 +1,21 @@
+// node_modules
 import React from 'react'
 import ReactDOM from 'react-dom';
 
-import './main.css';
-
-const layout = (
-	<div id="outer">
-		<div className="inner" id="inner-1"></div>
-		<div className="inner" id="inner-2"></div>
-		<div className="inner" id="inner-3"></div>
-		<div className="inner" id="inner-4"></div>
-	</div>
-);
+// class components
+import Header from '../src/components/Header.js';
+import Body from '../src/components/Body.js';
+import Footer from '../src/components/Footer.js';
 
 ReactDOM.render(
-	layout,
+	(
+		<div id='flex-container'>
+			<Header
+				logo='https://png.pngtree.com/png-clipart/20190611/original/pngtree-wolf-logo-png-image_2306634.jpg'
+				name='Fire Tigers' />
+			<Body />
+			<Footer />
+		</div>
+	),
 	document.getElementById('root')
 );
