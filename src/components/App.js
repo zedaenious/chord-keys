@@ -1,16 +1,20 @@
 import React from 'react';
 import ClickableButton from './ClickableButton';
 import {majorChords, minorChords} from '../data/chords';
+import {masterNotes} from '../data/masterNotes';
 import ChordPicker from './ChordPicker';
+import Chart from './Chart';
 
-export default class Body extends React.Component {
+export default class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			isMajor: true,
-			chords: majorChords
+			chords: majorChords,
+			notes: []
 		};
 		this.toggleMajorMinor = this.toggleMajorMinor.bind(this);
+		this.handleChordClick = this.handleChordClick.bind(this);
 	}
 
 	toggleMajorMinor() {
@@ -20,17 +24,26 @@ export default class Body extends React.Component {
 		});
 	}
 
+	handleChordClick(e) {
+		this.setState({
+			notes: masterNotes[e.currentTarget.textContent]
+		});
+	}
+
 	render() {
 		return (
 			<section>
 				<ClickableButton
-					onClickHandler={this.toggleMajorMinor}
+					isMajor={this.state.isMajor}
 					buttonText='Togger Major/Minor Chords'
-					isMajor={this.state.isMajor} />
+					onClickHandler={this.toggleMajorMinor} />
 				<ChordPicker
 					id="chord-picker"
 					name="chord-picker"
-					chords={this.state.chords} />
+					chords={this.state.chords}
+					onChordClick={this.handleChordClick} />
+				<Chart
+					notes={this.state.notes} />
 			</section>
 		)
 	}
