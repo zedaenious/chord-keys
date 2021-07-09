@@ -1,9 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-const isProduction = process.env.NODE_ENV === 'production';
-const contextPlugin = isProduction ? new MiniCssExtractPlugin() : () => {};
 
 const config = {
 	mode: 'development',
@@ -25,18 +21,25 @@ const config = {
 					],
 				},
 			},
+			{ 
+                test: /\.less$/,
+                use: [ 
+                    'style-loader',
+                    'css-loader', 
+                    'less-loader'
+                ],
+            },
 			{
-				test: /\.less$/,
+				test: /\.(png|jpe?g|gif)$/i,
 				use: [
-					isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
-					'css-loader',
-					'less-loader',
-				],
-			},
+					{
+						loader: 'file-loader'
+					}
+				]
+			}
 		],
 	},
 	plugins: [
-		contextPlugin,
 		new HtmlWebpackPlugin({
 			title: 'Development',
 			template: path.resolve(__dirname, 'src', 'index.html'),

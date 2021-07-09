@@ -1,11 +1,10 @@
 import React from 'react';
+import LinkList from './LinkList';
 
-export default class Footer extends React.Component {
-	constructor(props) {
-        super(props);
-    }
-
-	render() {
-		return <footer></footer>;
-	}
-}
+export default function Footer(props) {
+	return (
+		<footer>
+			<LinkList links={props.linkList} />
+		</footer>
+	);
+};

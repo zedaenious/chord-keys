@@ -1,17 +1,10 @@
 import React from 'react';
+import LinkList from './LinkList';
 
-export default class Header extends React.Component {
-	constructor(props) {
-        super(props);
-    }
-
-	render() {
-		return (
-			<header>
-				<img src={this.props.logo} />
-				{this.props.name}
-				<section id='nav'></section>
-			</header>
-		);
-	}
-}
+export default function Header(props) {
+	return (
+		<header>
+			<LinkList links={props.linkList} />
+		</header>
+	);
+};

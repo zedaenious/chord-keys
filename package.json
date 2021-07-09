@@ -1,19 +1,18 @@
 {
   "name": "react-simple-setup",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack serve",
-    "build:dev": "NODE_ENV=development webpack",
-    "build:prod": "NODE_ENV=production webpack",
-    "less:watch": "less-watch-compiler src dist main.less"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zedzelenak/react-simple-setup.git"
   },
-  "author": "",
+  "author": "Matt Zelenak",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack serve",
+    "less": "lessc src/main.less src/main.css",
+    "start": "npm run build && npm run serve"
+  },
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
@@ -24,11 +23,13 @@
     "babel": "^6.23.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
-    "less-watch-compiler": "^1.16.2",
+    "less": "^4.1.1",
+    "less-loader": "^10.0.1",
     "mini-css-extract-plugin": "^2.1.0",
     "style-loader": "^3.0.0",
-    "webpack": "^5.41.1",
+    "webpack": "^5.44.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
   }
