@@ -25,8 +25,8 @@ export default class Body extends React.Component {
 			<section>
 				<ClickableButton
 					onClickHandler={this.toggleMajorMinor}
-					buttonText='Togger Major/Minor Chords' />
-					<p>Currently Showing: {this.state.isMajor ? 'Major':'Minor'} Chords</p>
+					buttonText='Togger Major/Minor Chords'
+					isMajor={this.state.isMajor} />
 				<ChordPicker
 					id="chord-picker"
 					name="chord-picker"
