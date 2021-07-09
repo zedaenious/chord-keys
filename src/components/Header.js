@@ -4,7 +4,9 @@ import LinkList from './LinkList';
 export default function Header(props) {
 	return (
 		<header>
-			<LinkList links={props.linkList} />
+			<LinkList 
+				links={props.linkList}
+				direction="row" />
 		</header>
 	);
 };

@@ -10,7 +10,6 @@
   "scripts": {
     "build": "webpack",
     "serve": "webpack serve",
-    "less": "lessc src/main.less src/main.css",
     "start": "npm run build && npm run serve"
   },
   "dependencies": {

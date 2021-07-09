@@ -1,0 +1,46 @@
+body {
+	display: flex;
+	min-height: 100vh;
+  	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	background-image: url('../assets/bg-blue-afternoon.jpg');
+	background-size: cover;
+
+	#root {
+		height: 100%;
+
+		main#container {
+			width: 75%;
+			height: 100%;
+			margin: 0 auto;
+  			align-self: center;
+			background-color: rgba(255, 255, 255, 0.25);
+			padding: 0 75px;
+		}
+	}
+
+	footer {
+		margin-top: auto;
+		padding: 50px 0 0 0;
+	}
+
+	header {
+		padding: 0 0 50px 0;
+
+		li {
+			padding: 40px 100px;
+			text-align: center;
+
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.25);
+			}
+		}
+	}
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}

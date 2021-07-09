@@ -12,11 +12,11 @@ import './main.less';
 const linkList = ['Creative', 'Sales', 'Mobile', 'Security', 'Infrastructure'];
 
 const siteLayout = (
-	<div id='flex-container'>
+	<main id="container">
 		<Header linkList={linkList} />
 		<Body />
 		<Footer linkList={linkList} />
-	</div>
+	</main>
 );
 
 ReactDOM.render(

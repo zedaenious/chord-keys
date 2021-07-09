@@ -4,7 +4,9 @@ import LinkList from './LinkList';
 export default function Footer(props) {
 	return (
 		<footer>
-			<LinkList links={props.linkList} />
+			<LinkList
+				links={props.linkList}
+				direction="column" />
 		</footer>
 	);
 };
