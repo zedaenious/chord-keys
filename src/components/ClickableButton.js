@@ -1,5 +1,9 @@
 import React from 'react';
 
 export default function ClickableButton(props) {
-	return <button onClick={props.onClickHandler}>{props.buttonText}</button>;
+	return (
+		<div className="button-container">
+			<button onClick={props.onClickHandler}>{props.buttonText}</button>
+		</div>
+	);
 };
