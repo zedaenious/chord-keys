@@ -2,7 +2,7 @@ Playground: Guitar Chord Theory Helper
 
 ```
 $ // pull repo locally
-$ cd react-simple-setup
+$ cd guitar-chord-theory-helper
 $ npm install
 $ npm run start
 ```
