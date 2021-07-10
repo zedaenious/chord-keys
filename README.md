@@ -1,7 +1,8 @@
 Playground: Guitar Chord Theory Helper
 
 ```
-$ git clone ...
+$ // pull repo locally
+$ cd react-simple-setup
 $ npm install
 $ npm run start
 ```
