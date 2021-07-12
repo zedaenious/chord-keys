@@ -1,50 +1,41 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ClickableButton from './ClickableButton';
 import {majorChords, minorChords} from '../data/chords';
 import {majorNotes, minorNotes, masterNotes} from '../data/notes';
 import ChordPicker from './ChordPicker';
 import Chart from './Chart';
 
-export default class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			isMajor: true,
-			chords: majorChords,
-			notes: []
-		};
-		this.toggleMajorMinor = this.toggleMajorMinor.bind(this);
-		this.handleChordClick = this.handleChordClick.bind(this);
+export default function App() {
+	const [notes, setNotes] = useState([]);
+	const [isMajor, setIsMajor] = useState(true);
+	const [chords, setChords] = useState(majorChords);
+
+	const toggleIsMajor = () => {
+		setIsMajor((prev) => !prev);
 	}
 
-	toggleMajorMinor() {
-		this.setState({
-			isMajor: !this.state.isMajor,
-			chords: this.state.isMajor ? majorChords : minorChords
-		});
+	const handleButtonClick = () => {
+		toggleIsMajor();
+		setChords(isMajor ? majorChords : minorChords);
 	}
 
-	handleChordClick(e) {
-		this.setState({
-			notes: masterNotes[e.currentTarget.textContent]
-		});
+	const handleChordClick = ({target}) => {
+		setNotes(() => masterNotes[target.textContent]);
 	}
 
-	render() {
-		return (
-			<section>
-				<ClickableButton
-					isMajor={this.state.isMajor}
-					buttonText='Togger Major/Minor Chords'
-					onClickHandler={this.toggleMajorMinor} />
-				<ChordPicker
-					id="chord-picker"
-					name="chord-picker"
-					chords={this.state.chords}
-					onChordClick={this.handleChordClick} />
-				<Chart
-					notes={this.state.notes} />
-			</section>
-		)
-	}
+	return (
+		<section>
+			<ClickableButton
+				isMajor={isMajor}
+				buttonText='Togger Major/Minor Chords'
+				onClickHandler={handleButtonClick} />
+			<ChordPicker
+				id="chord-picker"
+				name="chord-picker"
+				chords={chords}
+				onChordClick={handleChordClick} />
+			<Chart
+				notes={notes} />
+		</section>
+	)
 }
