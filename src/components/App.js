@@ -1,7 +1,7 @@
 import React from 'react';
 import ClickableButton from './ClickableButton';
 import {majorChords, minorChords} from '../data/chords';
-import {masterNotes} from '../data/masterNotes';
+import {majorNotes, minorNotes, masterNotes} from '../data/notes';
 import ChordPicker from './ChordPicker';
 import Chart from './Chart';
 
