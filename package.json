@@ -8,7 +8,7 @@
   "author": "Matt Zelenak",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf node_modules && npm install && webpack --devtool source-map",
+    "build": "webpack --devtool source-map",
     "serve": "webpack serve",
     "start": "npm run build && npm run serve"
   },
