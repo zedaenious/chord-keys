@@ -1,23 +1,27 @@
+ul {
+	list-style-type: none;
+}
+
 #chord-picker {
 	display: flex;
 }
 
 .chord {
-	border: 1px solid blue;
+	border: 1px solid #19329E;
 	padding: 20px 35px;
 	margin: 10px 10px 0 0;
 	border-radius: 5px;
-	background-color: #3270E3;
+	background-color: #fff;
 	cursor: default;
 
 	&:hover {
-		background-color: #19329E;
-		border: 1px solid orange;
+		background-color: #3270E3;
+		color: #fff;
 		cursor: pointer;
 	}
 
 	&.selected {
-		border: 1px solid red;
-
+		background-color: #3270E3;
+		color: #fff;
 	}
 }
