@@ -1,14 +1,14 @@
 {
-  "name": "react-simple-setup",
+  "name": "chord-keys",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zedzelenak/react-simple-setup.git"
+    "url": "git+https://github.com/zedzelenak/chord-keys.git"
   },
   "author": "Matt Zelenak",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --devtool source-map",
+    "build": "rm -rf node_modules && npm install && webpack --devtool source-map",
     "serve": "webpack serve",
     "start": "npm run build && npm run serve"
   },
