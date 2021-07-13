@@ -1,6 +1,6 @@
 {
   "name": "chord-keys",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zedzelenak/chord-keys.git"
@@ -13,7 +13,8 @@
     "serve": "webpack serve",
     "start": "npm run build && npm run serve",
     "pub:major": "npm version major --force && npm publish",
-    "pub:minor": "npm version minor --force && npm publish"
+    "pub:minor": "npm version minor --force && npm publish",
+    "pub:patch": "npm version patch --force && npm publish"
   },
   "dependencies": {
     "react": "^17.0.2",
