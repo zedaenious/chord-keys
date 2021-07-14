@@ -9,12 +9,11 @@
   "private": true,
   "scripts": {
     "build": "npx webpack --config webpack.config.js",
-    "build:dev": "npx webpack --devtool source-map",
-    "serve": "npx webpack serve",
-    "start": "npm run build && npm run serve",
+    "build:dev": "npx webpack --devtool source-map && webpack serve",
     "pub:minor": "npm version minor --force",
     "pub:patch": "npm version patch --force",
-    "clean": "rm -rf node_modules && rm package-lock.json && rm dist/bundle.js"
+    "clean": "rm -rf node_modules && rm package-lock.json && rm dist/bundle.js && rm dist/bundle.js.map",
+    "clean:build": "npm run clean && npm install && npm run build:dev"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -31,6 +30,7 @@
     "less-loader": "^10.0.1",
     "style-loader": "^3.0.0",
     "webpack": "^5.44.0",
-    "webpack-cli": "^4.7.2"
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   }
 }

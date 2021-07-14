@@ -2,8 +2,8 @@ import Chart from './Chart';
 import React, {useState, useEffect} from 'react';
 import ChordPicker from './ChordPicker';
 import ClickableButton from './ClickableButton';
-import {majorChords, minorChords} from '../data/chords';
-import {majorNotes, minorNotes, masterNotes} from '../data/notes';
+import {majorChords, minorChords} from '../../data/chords';
+import {majorNotes, minorNotes, masterNotes} from '../../data/notes';
 
 export default function App() {
 	const [notes, setNotes] = useState([]);

@@ -1,5 +1,6 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
 	mode: 'development',
@@ -7,6 +8,13 @@ const config = {
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist'),
+	},
+	devServer: {
+		hot: true,
+		open: true,
+		port: 1080,
+		clientLogLevel: 'silent',
+		contentBase: path.resolve(__dirname, 'dist'),
 	},
 	module: {
 		rules: [
@@ -37,11 +45,14 @@ const config = {
 		]
 	},
 	plugins: [
-		new HtmlWebpackPlugin({
-			title: 'Development',
-			template: path.resolve(__dirname, 'dist', 'index.html'),
-		}),
+		new webpack.HotModuleReplacementPlugin()
 	],
+	// plugins: [
+	// 	new HtmlWebpackPlugin({
+	// 		title: 'Development',
+	// 		template: path.resolve(__dirname, 'dist', 'index.html'),
+	// 	}),
+	// ],
 };
 
 module.exports = config;
