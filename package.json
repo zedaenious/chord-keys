@@ -10,11 +10,11 @@
   "scripts": {
     "less": "lessc src/main.less src/main.css",
     "build": "npm run less && npx webpack --config webpack.config.js",
-    "build:dev": "npm run build:less && npx webpack --devtool source-map && webpack serve",
-    "minor": "npm version minor --force",
-    "patch": "npm version patch --force",
+    "build:dev": "npm run less && npx webpack --devtool source-map && webpack serve",
     "clean": "rm -rf node_modules && rm package-lock.json && rm dist/bundle.js && rm dist/bundle.js.map && rm dist/main.bundle.css && rm dist/main.bundle.css.map",
-    "clean:build": "npm run clean && npm install && npm run build:dev"
+    "clean:build": "npm run clean && npm install && npm run build:dev",
+    "minor": "npm version minor --force",
+    "patch": "npm version patch --force"
   },
   "dependencies": {
     "react": "^17.0.2",

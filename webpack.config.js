@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = env => {
 	return {
@@ -22,6 +23,10 @@ module.exports = env => {
 				filename: '[name].bundle.css',
 			}),
 			new webpack.HotModuleReplacementPlugin(),
+			new HtmlWebpackPlugin({
+				template: 'index.html',
+				title: 'Chord Keys Helper',
+			}),
 		],
 		module: {
 			rules: [
