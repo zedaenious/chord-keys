@@ -6,6 +6,7 @@ dist/
 #individual files
 package-lock.json
 src/main.css
+less-watch-compiler.config.json
 
 #file extensions
 **.swp

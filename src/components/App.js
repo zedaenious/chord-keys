@@ -1,23 +1,23 @@
 import Chart from './Chart';
 import React, {useState, useEffect} from 'react';
 import ChordPicker from './ChordPicker';
-import ClickableButton from './ClickableButton';
+// import ClickableButton from './ClickableButton';
 import {majorChords, minorChords} from '../../data/chords';
 import {majorNotes, minorNotes, masterNotes} from '../../data/notes';
 
 export default function App() {
 	const [notes, setNotes] = useState([]);
-	const [isMajor, setIsMajor] = useState(true);
+	// const [isMajor, setIsMajor] = useState(true);
 	const [chords, setChords] = useState(majorChords);
 
-	const toggleIsMajor = () => {
-		setIsMajor((prev) => !prev);
-	}
+	// const toggleIsMajor = () => {
+	// 	setIsMajor((prev) => !prev);
+	// }
 
-	const handleButtonClick = () => {
-		toggleIsMajor();
-		setChords(isMajor ? majorChords : minorChords);
-	}
+	// const handleButtonClick = () => {
+	// 	toggleIsMajor();
+	// 	setChords(isMajor ? majorChords : minorChords);
+	// }
 
 	const handleChordClick = ({target}) => {
 		removeSelected();
@@ -34,15 +34,15 @@ export default function App() {
 
 	return (
 		<section>
-			<ClickableButton
-				isMajor={isMajor}
-				buttonText='Togger Major/Minor Chords'
-				onClickHandler={handleButtonClick} />
 			<ChordPicker
 				id="chord-picker"
 				name="chord-picker"
 				chords={chords}
 				onChordClick={handleChordClick} />
+			{/*<ClickableButton
+				isMajor={isMajor}
+				buttonText='Togger Major/Minor Chords'
+				onClickHandler={handleButtonClick} />*/}
 			<Chart
 				notes={notes} />
 		</section>
