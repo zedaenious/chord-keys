@@ -5,7 +5,7 @@ dist/
 
 #individual files
 package-lock.json
-
+src/main.css
 
 #file extensions
 **.swp
