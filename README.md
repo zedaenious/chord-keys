@@ -2,7 +2,7 @@ https://chordkeys.pages.dev/
 
 Playing around with a front end for getting help with some guitar chord theory stuff. Current iteration just uses local data to show the diatonic scale notes for a given major or minor chord key.
 
-I'd like to add in some tablature for the individual notes on the scale, as a lot of them are not obvious (I'm looking at you `Cm\u266d5`);
+I'd like to add in some tablature for the individual notes on the scale, as a lot of them are not obvious (I'm looking at you `C♭m5`);
 
 To run dev build:
 ```
