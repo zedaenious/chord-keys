@@ -1,4 +1,3 @@
-// !! substring is symbol-replacement for flat symbol
 export const majorNotes = {
 	'C': ['C', 'Dm', 'Em', 'F', 'G', 'Am', 'Bm\u266d5'],
 	'C#': ['C#', 'D#m', 'E#m', 'F#', 'G#', 'A#m', 'B#m\u266d5'],
