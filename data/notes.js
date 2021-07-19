@@ -1,4 +1,4 @@
-export const majorNotes = {
+const majorNotes = {
 	'C': ['C', 'Dm', 'Em', 'F', 'G', 'Am', 'Bm\u266d5'],
 	'C#': ['C#', 'D#m', 'E#m', 'F#', 'G#', 'A#m', 'B#m\u266d5'],
 	'D\u266d': ['D\u266d', 'E\u266dm', 'Fm', 'G\u266d', 'A\u266d', 'B\u266dm', 'Cm\u266d5'],
@@ -14,7 +14,7 @@ export const majorNotes = {
 	'B\u266d': ['B\u266d', 'Cm', 'Dm', 'E\u266d', 'F', 'Gm', 'Am\u266d5'],
 	'B': ['B', 'C#', 'D#', 'E', 'F#', 'G#m', 'A#m\u266d5']
 };
-export const minorNotes = {
+const minorNotes = {
 	'Am': ['Am', 'Bm\u266d5', 'C', 'Dm', 'Em', 'F', 'G'],
 	'A#m': ['A#m', 'B#m\u266d5', 'C#', 'D#m', 'E#m', 'F#', 'G#'],
 	'B\u266dm': ['B\u266dm', 'Cm\u266d5', 'D\u266d', 'E\u266dm', 'Fm', 'G\u266d', 'A\u266d'],
@@ -30,4 +30,5 @@ export const minorNotes = {
 	'Gm': ['Gm', 'Am\u266d5', 'B\u266d', 'Cm', 'Dm', 'E\u266d', 'F'],
 	'G#m': ['G#m', 'A#m\u266d5', 'B', 'C#', 'D#', 'E', 'F#']
 };
-export const masterNotes = {...majorNotes, ...minorNotes}
+
+export const masterNotes = {...majorNotes, ...minorNotes};
