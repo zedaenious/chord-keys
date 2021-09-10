@@ -9,7 +9,7 @@ export default function LowerBar(props) {
   };
 
   return (
-    <div id="lower-bar" className={`${isCollapsed ? 'collapsed': ''}`}>
+    <footer id="lower-bar" className={`${isCollapsed ? 'collapsed': ''}`}>
       <CollapseToggle 
         collapsed={isCollapsed}
         onCollapseToggleClick={handleCollapseToggleClick} />
@@ -21,6 +21,6 @@ export default function LowerBar(props) {
           text={`Show ${props.isMajor ? 'Minor':'Major'} Chords`}
           onClickHandler={props.onToggleMajorClick} />
       </div>
-    </div>
+    </footer>
   );
 };

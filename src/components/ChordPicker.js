@@ -6,11 +6,11 @@ export default function ChordPicker(props) {
 	});
 
 	return (
-		<div>
+		<section id="chord-picker-container">
 			<p>Select your key</p>
 			<ul id="chord-picker">
 				{chords}
 			</ul>
-		</div>
+		</section>
 	);
 };
