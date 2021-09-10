@@ -12,8 +12,11 @@ export default function Chart(props) {
 	});
 
 	return (
-		<div id="notes">
-			{notes}
+		<div className={notes?.length ? '' : 'hidden'}>
+			<p>Here are the notes for your selected key</p>
+			<div id="notes">
+				{notes}
+			</div>
 		</div>
 	);
 };

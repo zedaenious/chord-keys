@@ -3,7 +3,7 @@ import CollapseToggle from './CollapseToggle';
 import ClickableButton from './ClickableButton';
 
 export default function LowerBar(props) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const handleCollapseToggleClick = () => {
     setIsCollapsed((prev) => !prev);
   };
