@@ -13,56 +13,80 @@ body {
 		padding: 0;
 		align-self: center;
 		background-color: @gray;
-	}
-}
 
-#lower-bar {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	background-color: @darkemerald;
-	border-top: 5px solid @emerald;
-	width: 100%;
-	text-align: center;
+		main {
+			header {
+				background-color: @darkemerald;
+				padding: 10px 20px;
+				border-bottom: 5px solid @emerald;
 
-  &.collapsed {
-    bottom: -70px;
-  }
+				h3 {
+					color: #ffffff;
+					margin: 0;
+					padding: 0;
+					text-shadow: 1px 1px 3px #5c5b0a;
+				}
+			}
 
-	#lower-bar-toggle {
-		position: absolute;
-		top: -55px;
-		right: 10px;
-		padding: 5px 0 0;
-		font-size: 30px;
-		color: @white;
-		background: @emerald;
-    width: 50px;
-    height: 50px;
+			section {
+				padding: 0 20px;
+			}
 
-		&:hover {
-			cursor: pointer;
+			#lower-bar {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				background-color: @darkemerald;
+				border-top: 5px solid @emerald;
+				width: 100%;
+				text-align: center;
+				padding: 5px 10px;
+
+			  &.collapsed {
+			    bottom: -70px;
+			  }
+
+				#lower-bar-toggle {
+					position: absolute;
+					top: -55px;
+					right: 30px;
+					padding: 5px 0 0;
+					font-size: 30px;
+					color: @white;
+					background: @emerald;
+			    width: 50px;
+			    height: 50px;
+
+					&:hover {
+						cursor: pointer;
+					}
+				}
+
+			  #lower-bar-controls {
+			    padding: 10px 0;
+			    display: flex;
+			    flex-flow: row nowrap;
+			    justify-content: flex-start;
+
+			    button {
+				    margin: 0 15px 0 0;
+						padding: 15px;
+						border-radius: 5px;
+						background-color: @white;
+						color: @black;
+						border: 2px solid @emerald;
+						font-size: 16px;
+
+				    &:last-child {
+				      margin-right: auto;
+				    }
+
+				    &:hover {
+				      cursor: pointer;
+				    }
+					}
+			  }
+			}
 		}
-	}
-
-  #lower-bar-controls {
-    padding:10px 0;
-  }
-
-	button {
-		margin: 0 auto;
-    margin-right: 25px;
-		padding: 20px 40px;
-		border-radius: 5px;
-		background-color: @white;
-		color: @black;
-
-    &:last-child {
-      margin-right: auto;
-    }
-
-    &:hover {
-      cursor: pointer;
-    }
 	}
 }

@@ -9,19 +9,18 @@ export default function LowerBar(props) {
   };
 
   return (
-    <section id="lower-bar" className={`${isCollapsed ? 'collapsed': ''}`}>
+    <div id="lower-bar" className={`${isCollapsed ? 'collapsed': ''}`}>
       <CollapseToggle 
         collapsed={isCollapsed}
         onCollapseToggleClick={handleCollapseToggleClick} />
-
-      <section id="lower-bar-controls">
+      <div id="lower-bar-controls">
         <ClickableButton
-          text='dont click this button'
-          onClickHandler={() => { alert('damnit i told you not to push this button!!')}} />
+          text='Reset'
+          onClickHandler={props.onResetClick} />
         <ClickableButton
           text={`Show ${props.isMajor ? 'Minor':'Major'} Chords`}
           onClickHandler={props.onToggleMajorClick} />
-      </section>
-    </section>
+      </div>
+    </div>
   );
 };

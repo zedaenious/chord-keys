@@ -33,19 +33,33 @@ export default function App() {
       chord.classList.remove('selected');
     });
   };
+  const onResetClick = (e) => {
+  	removeSelectedAll();
+  	setNotes([]);
+  };
 
 	return (
-		<section>
-			<ChordPicker
-				id="chord-picker"
-				name="chord-picker"
-				chords={chords}
-				onChordClick={handleChordClick} />
-			<Chart
-				notes={notes} />
-      <LowerBar
-        isMajor={isMajor}
-        onToggleMajorClick={handleToggleMajorClick}/>
-		</section>
+		<main>
+			<header>
+				<h3>Chord Theory Helper</h3>
+			</header>
+			<section>
+				<ChordPicker
+					id="chord-picker"
+					name="chord-picker"
+					chords={chords}
+					onChordClick={handleChordClick} />
+			</section>
+			<section>
+				<Chart
+					notes={notes} />
+			</section>
+			<section>
+				<LowerBar
+	        isMajor={isMajor}
+	        onToggleMajorClick={handleToggleMajorClick}
+	        onResetClick={onResetClick} />
+			</section>
+		</main>
 	)
 }
