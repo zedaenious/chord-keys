@@ -16,6 +16,11 @@ export default function App() {
     setNotes([]);
   }, [isMajor])
 
+  const [textHidden, setTextHidden] = useState(false);
+  const onToggleTextClick = () => {
+  	setTextHidden((prev) => !prev);
+  }
+
 	const [chords, setChords] = useState(majorChords);
 	const handleToggleMajorClick = () => {
 		toggleIsMajor();
@@ -33,6 +38,7 @@ export default function App() {
       chord.classList.remove('selected');
     });
   };
+  
   const onResetClick = (e) => {
   	removeSelectedAll();
   	setNotes([]);
@@ -43,18 +49,23 @@ export default function App() {
 			<header>
 				<h3>Chord Theory Helper</h3>
 			</header>
-			<section>
+			<section id="intro-text">
+				<aside className={textHidden ? 'hidden' : 'shown'}>
+					<p>I created this small application as a mobile helper when playing, for me, guitar. You may find this tool helpful too, when your writing your next song, as a quick way to check your playing the correct notes in whatever key you happen to choose.</p>
+					<p>I don't have much experience with music theory, but you can go to <a href="https://www.guitarmusictheory.com/modes/" target="_blank">this excellent site focused on guitar music theory</a> explanations to learn more for yourself.</p>
+					<div onClick={onToggleTextClick}>{textHidden ? 'Show' : 'Hide'} this information</div>
+				</aside>
+			</section>
+			<section id="chord-picker">
 				<ChordPicker
-					id="chord-picker"
-					name="chord-picker"
 					chords={chords}
 					onChordClick={handleChordClick} />
 			</section>
-			<section>
+			<section id="notes-chart">
 				<Chart
 					notes={notes} />
 			</section>
-			<section>
+			<section id="lower-bar">
 				<LowerBar
 	        isMajor={isMajor}
 	        onToggleMajorClick={handleToggleMajorClick}

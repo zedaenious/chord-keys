@@ -12,8 +12,8 @@ export default function Chart(props) {
 	});
 
 	return (
-		<section id="notes" className="flex-container flex-flow_row-wrap flex-justify-center">
+		<div id="notes">
 			{notes}
-		</section>
+		</div>
 	);
 };

@@ -19,17 +19,50 @@ body {
 				background-color: @darkemerald;
 				padding: 10px 20px;
 				border-bottom: 5px solid @emerald;
+				margin-bottom: 20px;
 
 				h3 {
 					color: #ffffff;
 					margin: 0;
 					padding: 0;
-					text-shadow: 1px 1px 3px #5c5b0a;
+					text-shadow: 1px 1px 3px @darkyellow;
 				}
 			}
 
 			section {
 				padding: 0 20px;
+				margin: 0 0 20px 0;
+
+				&#intro-text {
+					div {
+						color: #2c70b0;
+						text-decoration: underline;
+					}
+
+					.shown {
+						p {
+							display: block;
+						}
+					}
+
+					.hidden {
+						p {
+							display: none;
+						}
+					}
+				}
+			}
+
+			aside {
+				background-color: @white;
+				border-radius: 5px;
+				padding: 20px;
+
+				p {
+					margin: 0 0 15px 0;
+					padding: 0;
+					color: @darkslate;
+				}
 			}
 
 			#lower-bar {
